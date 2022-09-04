@@ -5,48 +5,57 @@ class Movie
 {
 
     // ! Fields
-    protected $title;
-    protected $plot;
-    protected $actors;
-    protected $genre;
+
+    private $title;
+    private $plot;
+    private $protagonist;
+    private $genre;
     public $userRating;
 
 
 
 
     // ? Constructor
-    function __construct($_title, $_plot, $_actors, $_genre, $_userRating)
+
+    function __construct($_title, $_plot, $_protagonist, $_genre, $_userRating)
     {
         $this->title = $_title;
         $this->plot = $_plot;
-        $this->actors = $_actors;
+        $this->protagonist = $_protagonist;
         $this->genre = $_genre;
         $this->userRating = $_userRating;
     }
 
     // * Methods
-    public function get_title($title)
+
+    public function getTitle()
     {
-        return $this->$title;
+        return $this->title;
     }
 
-    public function get_plot($plot)
+    public function getPlot()
     {
-        return $this->$plot;
+        return $this->plot;
     }
 
-    public function get_actors($actors)
+    public function getProtagonist()
     {
-        return $this->$actors;
+        return $this->protagonist;
     }
 
-    public function get_genre($genre)
+    public function getGenre()
     {
-        return $this->$genre;
+        return $this->genre;
     }
-    
-    public function get_rating($userRating)
+
+    public function getRating()
     {
-        return $this->$userRating;
+        return $this->userRating;
+    }
+
+    public function setRating($numberCheck)
+    {
+        if (is_numeric($numberCheck))
+            $this->numberCheck = $numberCheck;
     }
 }
